@@ -8,7 +8,11 @@ Write a function called addTwo that takes in an array and adds two to every valu
 ------------------------------------------------------------------------------------------------ */
 
 const addTwo = (arr) => {
-  let newArray=arr.map(n=>n+2);
+  const newArray=[];
+  for(let i=0;i<arr.length;i++){
+    let newValue=arr[i]+2;
+    newArray.push(newValue);
+  }
   return newArray;
 };
 
