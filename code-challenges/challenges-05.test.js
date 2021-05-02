@@ -142,8 +142,6 @@ const reversedString = (str) => {
     return currentLetter+newString;
   },'');
 
-
-
 };
 
 
