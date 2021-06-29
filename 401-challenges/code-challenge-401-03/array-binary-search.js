@@ -7,21 +7,20 @@ function binarySearch(arr, val) {
     if (arr[i] === val) {
       return i;
     }
-    else {
-      return -1;
-    }
   }
   return -1;
 }
 
 
 
-
+console.log();
 
 console.log('==================');
 console.log('before function ', arrayOfNum);
+console.log('val', 5);
 console.log('after function', binarySearch(arrayOfNum, 5));
 console.log('==================');
 console.log('before function ', arrayOfLetters);
+console.log('val', 'z');
 console.log('after function', binarySearch(arrayOfLetters, 'z'));
 console.log('==================');
