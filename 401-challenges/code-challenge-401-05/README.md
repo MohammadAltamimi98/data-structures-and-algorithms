@@ -23,10 +23,6 @@
 ## .toString()
 - Output a string of the contents of a linked list
 
-
-
-
-<br/>
 <br/>
 <br/>
 <br/>
