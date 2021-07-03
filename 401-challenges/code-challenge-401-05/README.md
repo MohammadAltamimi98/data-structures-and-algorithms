@@ -1,6 +1,9 @@
 # Code Challenge: Class 05
- - Challenge 05: Create three prototype functions for single linked list class; insert, include, and toString
 
+## Linked-List
+ - Challenge 05: Create three prototype functions for single linked list class; insert, include, and toString
+<br/>
+<br/>
 <!-- Description of the challenge --
 
 ## Whiteboard Process
