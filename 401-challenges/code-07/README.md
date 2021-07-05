@@ -2,10 +2,34 @@
 
 + Code Challenges 05 
 + Code Challenges 06
++ Code Challenges 07
+
 
 ## Challenge
 
-* Challenge 05: Create three prototype functions for single linked list class; insert, include, and toString
+* Challenge 05: Create three prototype functions for single linked list class; insert, include, and toString.
+
+
+## WhiteBoard(paper)
+
+![](.././images/one.jpeg)
+
+<br/>
+<br/>
+
+* Challenge 06: Create three prototype functions of linked list class; append, insert after, and insert before;
+
+
+## WhiteBoard(paper)
+
+![](.././images/insert.jpeg)
+<br/>
+<br/>
+
+* Challenge 07: Create a prototype function for finding the nth value from the end of a linked list
+## WhiteBoard(paper)
+
+![](.././images/k.jpeg)
 
 <br/>
 <br/>
@@ -61,3 +85,10 @@ Big O space is O(1) and time is O(n);
   
 <br/>
 <br/>
+
+- .kthFromEnd() A function that finds the value kth from the end of the linked list
+
+<br/>
+<br/>
+
+
