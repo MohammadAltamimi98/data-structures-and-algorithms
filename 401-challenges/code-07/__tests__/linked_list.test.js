@@ -137,3 +137,51 @@ describe('testing linked list insertAfter function', () => {
 });
 
 
+describe('testing linked list kthFromEnd function', () => {
+  it('should return invalid input string if k is greater than the length of the list', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.kthFromEnd(5)).toEqual('Invalid Input Number');
+  });
+
+  it('should return invalid input string if k is the length of the list because index starts at 0', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(4)).toEqual('Invalid Input Number');
+  });
+
+  it('should return invalid input string if k is a negative number', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(-2)).toEqual('Invalid Input Number');
+  });
+
+  it('should return the only value if the linked list has one node and k = 0', () => {
+    const ll = new LinkedList();
+    ll.insert(1);
+
+    expect(ll.kthFromEnd(0)).toEqual(1);
+  });
+
+  it('should find the value 3 places from the end if k = 1', () => {
+    const ll = new LinkedList();
+    ll.insert(4);
+    ll.insert(3);
+    ll.insert(2);
+    ll.insert(1);
+    expect(ll.kthFromEnd(1)).toEqual(3);
+  });
+});
+
+
