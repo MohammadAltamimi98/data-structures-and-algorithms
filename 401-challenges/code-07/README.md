@@ -3,7 +3,7 @@
 + Code Challenges 05 
 + Code Challenges 06
 + Code Challenges 07
-Code Challenges 08
++ Code Challenges 08
 
 
 ## Challenge
@@ -41,7 +41,7 @@ Code Challenges 08
 <br/>
 
 * challenge 08:
-[](401-challenges/images/linkedlist4.jpeg)
+![](.././images/linkedlist4.jpeg)
 
 ## Approach & Efficiency
 
