@@ -12,7 +12,13 @@
 
 3. [code challenge 401 - 03](401-challenges/code-challenge-401-03/README.md)
 
-4. [code challenge 401 - 05](401-challenges/code-challenge-401-05/README.md)
+4. [code challenge 401 - 05](401-challenges/code-07/README.md)
+
+6. [code challenge 401 - 06](401-challenges/code-07/README.md)
+
+7. [code challenge 401 - 07](401-challenges/code-07/README.md)
+
+8. [code challenge 401 - 08](401-challenges/code-07/README.md)
 
 
 
