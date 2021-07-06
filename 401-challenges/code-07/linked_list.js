@@ -51,6 +51,7 @@ class LinkedList {
     }
     return finalStr += 'NULL';
   }
+
   append(value) {
     let current = this.head;
     if (!current) {
@@ -64,6 +65,7 @@ class LinkedList {
       this.size = this.size + 1;
     }
   }
+
   insertBefore(value, targetValue) {
     let current = this.head;
     if (current.value === targetValue) {
@@ -78,6 +80,7 @@ class LinkedList {
       this.size = this.size + 1;
     }
   }
+
   insertAfter(value, targetValue) {
     let current = this.head;
     while (current.value !== targetValue) {
@@ -88,6 +91,7 @@ class LinkedList {
     current.next = temp;
     this.size = this.size + 1;
   }
+
   kthFromEnd(k) {
     let currentNode = this.head;
     let count = this.size - 1;
