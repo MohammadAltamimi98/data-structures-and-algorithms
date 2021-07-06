@@ -40,7 +40,8 @@
 <br/>
 <br/>
 
-* challenge 08:
+* challenge 08: takes in two lists and returns a zipped list. 
+
 ![](.././images/linkedlist4.jpeg)
 
 ## Approach & Efficiency
