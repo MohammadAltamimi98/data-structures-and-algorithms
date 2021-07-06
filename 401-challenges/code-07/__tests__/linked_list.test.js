@@ -4,6 +4,7 @@ const linkedListMaster = require('../linked_list');
 
 const LinkedList = linkedListMaster.ll;
 const Node = linkedListMaster.node;
+const zip = linkedListMaster.zip;
 
 
 describe('testing linked list instantiation', () => {
@@ -23,7 +24,6 @@ describe('testing insert value function for linked list', () => {
     ll.insert(4);
     expect(ll.head.value).toEqual(4);
   });
-
 });
 
 describe('testing linked list head points to first node in linked list', () => {
@@ -57,8 +57,9 @@ describe('testing includes function for searching for a specific value in a link
     ll.insert(1);
     expect(ll.includes(3)).toBeTruthy();
   });
-  it('should return false if target value is not present ', () => {
+  it(`should return false if target value is not present`, () => {
     const ll = new LinkedList();
+
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
@@ -134,9 +135,8 @@ describe('testing linked list insertAfter function', () => {
     ll.insertAfter(4, 3);
     expect(ll.head.next.next.next.value).toEqual(4);
   });
+
 });
-
-
 describe('testing linked list kthFromEnd function', () => {
   it('should return invalid input string if k is greater than the length of the list', () => {
     const ll = new LinkedList();
@@ -144,7 +144,7 @@ describe('testing linked list kthFromEnd function', () => {
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
-    expect(ll.kthFromEnd(5)).toEqual('Invalid Input Number');
+    expect(ll.kthFromEnd(5)).toEqual('Exception');
   });
 
   it('should return invalid input string if k is the length of the list because index starts at 0', () => {
@@ -154,7 +154,7 @@ describe('testing linked list kthFromEnd function', () => {
     ll.insert(2);
     ll.insert(1);
 
-    expect(ll.kthFromEnd(4)).toEqual('Invalid Input Number');
+    expect(ll.kthFromEnd(4)).toEqual('Exception');
   });
 
   it('should return invalid input string if k is a negative number', () => {
@@ -164,7 +164,7 @@ describe('testing linked list kthFromEnd function', () => {
     ll.insert(2);
     ll.insert(1);
 
-    expect(ll.kthFromEnd(-2)).toEqual('Invalid Input Number');
+    expect(ll.kthFromEnd(-2)).toEqual('Exception');
   });
 
   it('should return the only value if the linked list has one node and k = 0', () => {
@@ -174,14 +174,82 @@ describe('testing linked list kthFromEnd function', () => {
     expect(ll.kthFromEnd(0)).toEqual(1);
   });
 
-  it('should find the value 3 places from the end if k = 1', () => {
+  it('should find the value 2 places from the end if k = 2', () => {
     const ll = new LinkedList();
     ll.insert(4);
     ll.insert(3);
     ll.insert(2);
     ll.insert(1);
-    expect(ll.kthFromEnd(1)).toEqual(3);
+    expect(ll.kthFromEnd(2)).toEqual(2);
   });
 });
 
+describe('testing  zip function', () => {
+  it('same size for two linked list ', () => {
+    let linkedlistm = new LinkedList();
+    linkedlistm.insert(1);
+    linkedlistm.append(2);
+    linkedlistm.append(3);
+    let linkedlisto = new LinkedList();
+    linkedlisto.insert(4);
+    linkedlisto.append(5);
+    linkedlisto.append(6);
+    let ll = zip(linkedlistm, linkedlisto);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+  });
+  it('first linked list greater than second linked list ', () => {
+    let linkedlistm = new LinkedList();
+    linkedlistm.insert(1);
+    linkedlistm.append(2);
+    linkedlistm.append(3);
 
+    let linkedlisto = new LinkedList();
+    linkedlisto.insert(4);
+    linkedlisto.append(5);
+
+    let ll = zip(linkedlistm, linkedlisto);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+  it('second linked list is greater than first linked list ', () => {
+    let linkedlistm = new LinkedList();
+    linkedlistm.insert(1);
+    linkedlistm.append(2);
+    let linkedlisto = new LinkedList();
+    linkedlisto.insert(4);
+    linkedlisto.append(5);
+    linkedlistm.append(3);
+
+    let ll = zip(linkedlistm, linkedlisto);
+    expect(ll.head.value).toEqual(1);
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual(2);
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+  it('second linked list is greater than first linked list ', () => {
+    let linkedlistm = new LinkedList();
+    linkedlistm.insert('a');
+    linkedlistm.append('b');
+    let linkedlisto = new LinkedList();
+    linkedlisto.insert(4);
+    linkedlisto.append(5);
+    linkedlistm.append(3);
+
+    let ll = zip(linkedlistm, linkedlisto);
+    expect(ll.head.value).toEqual('a');
+    expect(ll.head.next.value).toEqual(4);
+    expect(ll.head.next.next.value).toEqual('b');
+    expect(ll.head.next.next.next.value).toEqual(5);
+    expect(ll.head.next.next.next.next.value).toEqual(3);
+    expect(ll.head.next.next.next.next.next).toEqual(null);
+  });
+
+});
