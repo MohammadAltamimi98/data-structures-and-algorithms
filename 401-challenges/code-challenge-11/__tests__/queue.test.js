@@ -1,6 +1,6 @@
 'use strict';
 
-const PseudoQueue = require('../queue-with-stacks.js');
+const PseudoQueue = require('../stackQueuePseudo');
 
 // ------------- QUEUES TEST ------------ //
 
