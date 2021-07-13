@@ -23,7 +23,7 @@
 
 ## WhiteBoard(paper)
 
-![](.././images/insert.jpeg)
+![](.././images/code06-1.png)
 <br/>
 <br/>
 
