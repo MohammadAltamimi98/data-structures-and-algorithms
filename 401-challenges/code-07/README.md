@@ -37,6 +37,10 @@
 
 * Challenge 06: Create three prototype functions of linked list class; append, insert after, and insert before;
 
+![](.././images/code06-1.png)
+
+
+
 <br/>
 <br/>
 
