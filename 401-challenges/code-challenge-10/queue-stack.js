@@ -80,10 +80,10 @@ class Stack {
 
 
 
-let queue = new PseudoQueue();
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
-console.log(queue);
+// let queue = new PseudoQueue();
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
+// console.log(queue);
 
 module.exports = PseudoQueue;
