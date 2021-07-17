@@ -26,14 +26,13 @@ class Stack {
     }
   }
 
-
-
   getMax() {
     if (!this.first) {
       return 'The stack has the similar status as your social.';
     }
-    let finality = this.first;
     let arrow = this.first;
+    let finality = this.first;
+    console.log('hey', finality);
     while (finality) {
       if (arrow.value < arrow.next.value) {
         arrow = arrow.next
@@ -46,4 +45,11 @@ class Stack {
 }
 
 
-module.exports = Stack
+const stack = new Stack();
+stack.push(2);
+stack.push(5);
+// stack.push(8);
+// console.log(stack);
+console.log(stack.getMax())
+
+module.exports = Stack;
