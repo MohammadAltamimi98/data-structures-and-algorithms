@@ -2,7 +2,6 @@
 const PseudoQueue = require('../code-challenge-10/queue-stack');
 
 
-
 class Animal {
   constructor(kind) {
     this.kind = kind;
@@ -19,35 +18,42 @@ class AnimalShelter {
   // enqueue takes in the argument animal
   enqueue(animal) {
     //animal can be either a dog or a cat object.
-    if (animal.kind === 'dog') {
-      this.dog.enqueue(animal);
-      return this.dog;
-    }
-    else if (animal.kind === 'cat') {
-      this.cat.enqueue(animal);
-      return this.cat;
-    }
-    else {
-      return 'Just cats and dogs are allowed'
+    try {
+      if (animal.kind === 'dog') {
+        this.dog.enqueue(animal);
+        return this.dog;
+      }
+      else if (animal.kind === 'cat') {
+        this.cat.enqueue(animal);
+        return this.cat;
+      }
+      else {
+        return 'Just cats and dogs are allowed'
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
-
 
   // dequeue takes in the argument pref
   dequeue(pref) {
     //Return: either a dog or a cat, based on preference
-    if (pref.kind === 'dog') {
-      this.dog.dequeue(pref);
-    }
-    else if (pref.kind === 'cat') {
-      this.cat.dequeue(pref);
-    }
-    else {
-      return null;
+    try {
+      if (pref.kind === 'dog') {
+        this.dog.dequeue(pref);
+      }
+      else if (pref.kind === 'cat') {
+        this.cat.dequeue(pref);
+      }
+      else {
+        return null;
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
-
 }
+
 
 let ourShelter = new AnimalShelter();
 let kitty = new Animal('rabbit');
