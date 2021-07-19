@@ -22,5 +22,6 @@
 
 9. [code challenge 401 - 10](401-challenges/code-challenge-10/README.md)
 
+12. [code challenge 401 - 12](401-challenges/code-challenge-12/README.md)
 
 
