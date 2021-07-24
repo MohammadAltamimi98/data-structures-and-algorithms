@@ -1,12 +1,14 @@
 'use strict';
 const Node = require('./Node');
-const tree = require('./BinaryTree');
+const BinaryTree = require('./BinaryTree');
 
-class BinarySearchTree {
+
+class BinarySearchTree extends BinaryTree {
 
   add(value) {
     const node = this.root;
-    if (node === null) {
+
+    if (!node) {
       this.root = new Node(value);
       return;
     }
@@ -14,7 +16,7 @@ class BinarySearchTree {
       const searchTree = function (node) {
         // if data we are passing is less than node.value >> put the node on the left side of the tree otherwise 
         if (value < node.value) {
-          if (node.left === null) {
+          if (!node.left) {
             node.left = new Node(value);
             return;
           }
@@ -22,7 +24,7 @@ class BinarySearchTree {
             return searchTree(node.left); // keep searching
           }
           else if (value > node.value) {
-            if (node.right === null) {
+            if (!node.right) {
               node.right = new Node(value);
               return;
             } else if (node.right !== null) {
@@ -31,17 +33,14 @@ class BinarySearchTree {
           } else {
             return null;
           }
-
         };
         return searchTree(node)
       }
     }
 
+
+
   }
-
-
-  
-
 }
 
 module.exports = BinarySearchTree;
