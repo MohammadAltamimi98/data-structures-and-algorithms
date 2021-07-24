@@ -4,42 +4,49 @@ const BinaryTree = require('./BinaryTree');
 
 
 class BinarySearchTree extends BinaryTree {
-
   add(value) {
-    const node = this.root;
 
-    if (!node) {
-      this.root = new Node(value);
+    const node = new Node(value);
+
+    if (!this.root) {
+      this.root = node;
       return;
     }
-    else {
-      const searchTree = function (node) {
-        // if data we are passing is less than node.value >> put the node on the left side of the tree otherwise 
-        if (value < node.value) {
-          if (!node.left) {
-            node.left = new Node(value);
-            return;
-          }
-          else if (node.left !== null) {
-            return searchTree(node.left); // keep searching
-          }
-          else if (value > node.value) {
-            if (!node.right) {
-              node.right = new Node(value);
-              return;
-            } else if (node.right !== null) {
-              return searchTree(node.right);
-            }
-          } else {
-            return null;
-          }
-        };
-        return searchTree(node)
+
+    const _traverse = (current) => {
+      if (current.value < node.value) {
+        if (!current.right) {
+          current.right = node;
+          return;
+        }
+        _traverse(current.right);
       }
+
+      if (current.value > node.value) {
+        if (!current.left) {
+          current.left = node;
+          return;
+        }
+        _traverse(current.left);
+      }
+      if (current.value === node.value) throw new Error('Duplicate is not allowed.');
+    };
+
+    _traverse(this.root);
+    return;
+  }
+
+
+  contains(val) {
+    // let root = this.root;
+    if (!this.root) throw new Error('There is no root.');
+    const _traverse = node => {
+      if (node.value = val) return true;
+      if (val < node.value && node.left) { return _traverse(node.left) };
+      if (val > node.value && node.right) { return _traverse(node.right) };
+      return false;
     }
-
-
-
+    return _traverse(this.root);
   }
 }
 
