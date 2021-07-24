@@ -37,16 +37,22 @@ class BinarySearchTree extends BinaryTree {
   }
 
 
-  contains(val) {
-    // let root = this.root;
-    if (!this.root) throw new Error('There is no root.');
-    const _traverse = node => {
-      if (node.value = val) return true;
-      if (val < node.value && node.left) { return _traverse(node.left) };
-      if (val > node.value && node.right) { return _traverse(node.right) };
-      return false;
+  contains(value) {
+    let root = this.root;
+    if (!root) return 'The tree is empty.';
+    let current = this.root;
+    while (current) {
+      if (value < current.value) {
+        current = current.left;
+      }
+      else if (value > current.value) {
+        current = current.right;
+      }
+      else {
+        return true;
+      }
     }
-    return _traverse(this.root);
+    return false;
   }
 }
 

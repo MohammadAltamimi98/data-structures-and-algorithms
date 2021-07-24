@@ -1,5 +1,6 @@
 const BinarySearchTree = require('../BinarySearchTree');
-// const Node = require('../tree').Node;
+const Node = require('../Node');
+const BinaryTree = require('../BinaryTree');
 
 describe('Binary Search Tree', () => {
   let tree;
@@ -32,7 +33,13 @@ describe('Binary Search Tree', () => {
   })
   test('should return false if value is not in the tree', () => {
     console.log(tree);
-    expect(tree.contains(1700)).toBeTruthy();
+    expect(tree.contains(1700)).toBeFalsy();
+
+  })
+
+  test('should return false if value is not in the tree', () => {
+    let newTree = new BinarySearchTree();
+    expect(newTree.contains(1700)).toEqual('The tree is empty.');
 
   })
 
