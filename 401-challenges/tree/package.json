@@ -4,7 +4,8 @@
   "description": "",
   "main": "BinaryTree.js",
   "scripts": {
-    "test": "jest --coverage --verbose"
+    "test": "jest --coverage --verbose",
+    "watch": "jest --verbose --coverage --watchAll"
   },
   "keywords": [],
   "author": "",
