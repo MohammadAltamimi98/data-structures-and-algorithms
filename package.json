@@ -19,5 +19,14 @@
   "devDependencies": {
     "jest": "^27.0.6",
     "supertest": "^6.1.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammadAltamimi98/data-structures-and-algorithms.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/MohammadAltamimi98/data-structures-and-algorithms/issues"
+  },
+  "homepage": "https://github.com/MohammadAltamimi98/data-structures-and-algorithms#readme"
 }
