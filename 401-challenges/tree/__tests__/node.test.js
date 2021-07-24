@@ -25,25 +25,25 @@ describe('Binary Tree check', () => {
     tree = new BinaryTree(one);
   })
 
-  xtest('should test preorder', () => {
+  test('should test preorder', () => {
     let expectedOrder = [1, 2, 4, 5, 7, 3, 6];
     console.log(tree);
     expect(tree.preOrder()).toEqual(expectedOrder)
   })
 
-  xtest('should test inorder', () => {
+  test('should test inorder', () => {
     let expectedOrder = [4, 2, 5, 7, 1, 6, 3];
     console.log(tree);
     expect(tree.inOrder()).toEqual(expectedOrder)
   })
 
-  xtest('should test postOrder', () => {
+  test('should test postOrder', () => {
     let expectedOrder = [4, 7, 5, 2, 6, 3, 1];
     console.log(tree);
     expect(tree.postOrder()).toEqual(expectedOrder)
   })
 
-  xtest('should throw an error when root is null', () => {
+  test('should throw an error when root is null', () => {
     tree = new BinaryTree();
     let expectedOrder = [4, 7, 5, 2, 6, 3, 1];
     expect(() => {

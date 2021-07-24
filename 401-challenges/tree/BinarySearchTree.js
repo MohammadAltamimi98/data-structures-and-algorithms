@@ -4,15 +4,17 @@ const BinaryTree = require('./BinaryTree');
 
 
 class BinarySearchTree extends BinaryTree {
-  add(value) {
 
+  add(value) {
+    let root = this.root;
     const node = new Node(value);
 
-    if (!this.root) {
+    if (!root) {
       this.root = node;
       return;
     }
 
+    let current = this.root;
     const _traverse = (current) => {
       if (current.value < node.value) {
         if (!current.right) {
@@ -32,15 +34,17 @@ class BinarySearchTree extends BinaryTree {
       if (current.value === node.value) throw new Error('Duplicate is not allowed.');
     };
 
-    _traverse(this.root);
+    _traverse(root);
     return;
   }
 
 
   contains(value) {
     let root = this.root;
+
     if (!root) return 'The tree is empty.';
     let current = this.root;
+
     while (current) {
       if (value < current.value) {
         current = current.left;
