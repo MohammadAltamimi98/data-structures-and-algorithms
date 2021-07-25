@@ -16,3 +16,32 @@
 ![](./max.png)
 
 <br/>
+<br/>
+
+
+## Whiteboard solution:
+![](./getmaxtree.png)
+
+<br/>
+<br/>
+
+## Approach and efficiency
+- Time complexity : O(n)
+
+
+
+<br/>
+<br/>
+
+
+## Test
+
+```npm run test``` 
+
+<br/>
+
+
+```npm run watch```
+
+<br/>
+<br/>
