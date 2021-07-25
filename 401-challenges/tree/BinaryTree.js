@@ -43,6 +43,28 @@ class BinaryTree {
     _traverse(this.root);
     return results;
   }
+
+
+
+  // choose one of the above methods  and use it to insert values in the array
+  //define the max value to be the first index of the array
+  // start a for loop from 1 till the array length
+  // - if the array [i] value is bigger than maxNow 
+  //- define maxNow to be the new array[i]
+  // and after you loop through all  return maxNow
+
+  findMaximumValue() {
+    let array = this.preOrder();
+    let maxNow = array[0];
+    for (let i = 1; i < array.length; i++) {
+
+      if (array[i] > maxNow) {
+        maxNow = array[i];
+      }
+
+    }
+    return maxNow;
+  }
 }
 
 module.exports = BinaryTree;
