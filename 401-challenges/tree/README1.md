@@ -26,7 +26,14 @@
 <br/>
 
 ## Approach and efficiency
-- Time complexity : O(n)
+
+- we define an array and put each node value in it.
+- we loop through the array
+- define a comparison variable to compare with . ex array[0]
+- after it has looped through every index return the largest value
+
+- since we used a for loop then:  
+    * Time complexity : O(n)
 
 
 
@@ -43,5 +50,4 @@
 
 ```npm run watch```
 
-<br/>
 <br/>
