@@ -3,6 +3,7 @@ const Node = require('./Node');
 const BinaryTree = require('./BinaryTree');
 
 
+
 class BinarySearchTree extends BinaryTree {
 
   add(value) {

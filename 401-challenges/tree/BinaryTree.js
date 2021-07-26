@@ -65,6 +65,44 @@ class BinaryTree {
     }
     return maxNow;
   }
+
+
+  breadthFirstFunction() {
+    try {
+      let current = this.root; // initiate current to be your pointer
+      if (!current) throw new Error('There is no root');
+      let data = []; // initaiate an empty array to hold the values of nodes
+      let arrayOfNodes = [];// initiate an empty array to hold all nodes 
+
+      // push the root node to the arrayOfNodes
+      arrayOfNodes.push(current);
+
+      //if root ddin't exist >> return false without traversing
+      if (arrayOfNodes.length === 0) {
+        return false;
+      }
+
+
+      // use a while loop to traverse 
+      while (arrayOfNodes.length) {
+        current = arrayOfNodes.splice(0, 1)[0]; // define the current to equal the first item in the array and remove it from the array (zeroth index);
+        // splice(0,1) will remove the index and return a new array [0] is the first index of that array
+
+        data.push(current.value); //push the value to the data array
+        if (current.left) {
+          arrayOfNodes.push(current.left);
+        }; // if current.left exist then push the current.left to the array of nodes.
+        if (current.right) {
+          arrayOfNodes.push(current.right);
+        } // if current.right exist then push the current.right to the array of nodes for the next use of `current=arrayOfNodes.shift();`
+      }
+      return data;
+    }
+    catch (error) {
+      console.log(error.message);
+    }
+  }
 }
 
 module.exports = BinaryTree;
+
