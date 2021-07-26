@@ -65,6 +65,23 @@ class BinaryTree {
     }
     return maxNow;
   }
+
+  breadthFirstFunction() {
+    let node = this.root; // initiate node to be your pointer
+    let data = []; // initaiate an empty array to hold the values of nodes
+    let arrayOfNodes = [];// initiate an empty array to hold all nodes 
+    //1. push the root node to the arrayOfNodes
+    arrayOfNodes.push(node);
+    while (arrayOfNodes.length) {
+      node = arrayOfNodes.shift(); // define the node to equal the first item in the array and remove it from the array (zeroth index); 
+      data.push(node.value); //push the value to the data array
+      if (node.left) arrayOfNodes.push(node.left); // if node.left exist then push the node.left to the array of nodes
+      if (node.right) arrayOfNodes.push(node.right);// if node.right exist then push the node.right to the array of nodes for the next use of `node=arrayOfNodes.shift();`
+    }
+    return data;
+  }
+
 }
 
 module.exports = BinaryTree;
+

@@ -51,5 +51,44 @@ describe('find max check', () => {
 })
 
 
+describe('breadth first search', () => {
+  let tree;
+
+  beforeAll(() => {
+    const one = new Node(1);
+    const two = new Node(2);
+    const three = new Node(3);
+    const four = new Node(4);
+    const five = new Node(5);
+    const six = new Node(60);
+    const seven = new Node(7);
+
+    one.left = two;
+    one.right = three;
+    two.left = four;
+    two.right = five;
+    three.left = six;
+    five.right = seven;
+
+    tree = new BinaryTree(one);
+  })
+
+
+  test('should  return values of the nodes according to breadth first arrangement', () => {
+    expect(tree.breadthFirstFunction()).toEqual([
+      1,
+      2,
+      3,
+      4,
+      5,
+      60,
+      7
+    ]);
+  })
+
+})
+
+
+
 
 
