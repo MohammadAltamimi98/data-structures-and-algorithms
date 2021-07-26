@@ -86,6 +86,11 @@ describe('breadth first search', () => {
     ]);
   })
 
+  test('should  return false', () => {
+    tree = new BinaryTree();
+    expect(tree.breadthFirstFunction()).toBeFalsy();
+  })
+
 })
 
 

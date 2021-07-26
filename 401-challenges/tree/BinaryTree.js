@@ -66,25 +66,40 @@ class BinaryTree {
     return maxNow;
   }
 
+
   breadthFirstFunction() {
-    let node = this.root; // initiate node to be your pointer
-    if (!node) throw new Error('There is no root');
-    let data = []; // initaiate an empty array to hold the values of nodes
-    let arrayOfNodes = [];// initiate an empty array to hold all nodes 
+    try {
+      let current = this.root; // initiate current to be your pointer
+      if (!current) throw new Error('There is no root');
+      let data = []; // initaiate an empty array to hold the values of nodes
+      let arrayOfNodes = [];// initiate an empty array to hold all nodes 
 
-    //1. push the root node to the arrayOfNodes
-    arrayOfNodes.push(node);
+      // push the root node to the arrayOfNodes
+      arrayOfNodes.push(current);
 
-    // use a while loop 
-    while (arrayOfNodes.length) {
-      node = arrayOfNodes.shift(); // define the node to equal the first item in the array and remove it from the array (zeroth index); 
-      data.push(node.value); //push the value to the data array
-      if (node.left) arrayOfNodes.push(node.left); // if node.left exist then push the node.left to the array of nodes.
-      if (node.right) arrayOfNodes.push(node.right); // if node.right exist then push the node.right to the array of nodes for the next use of `node=arrayOfNodes.shift();`
+      //if root ddin't exist >> return false without traversing
+      if (arrayOfNodes.length === 0) {
+        return false;
+      }
+
+
+      // use a while loop to traverse 
+      while (arrayOfNodes.length) {
+        current = arrayOfNodes.shift(); // define the current to equal the first item in the array and remove it from the array (zeroth index); 
+        data.push(current.value); //push the value to the data array
+        if (current.left) {
+          arrayOfNodes.push(current.left);
+        }; // if current.left exist then push the current.left to the array of nodes.
+        if (current.right) {
+          arrayOfNodes.push(current.right);
+        } // if current.right exist then push the current.right to the array of nodes for the next use of `current=arrayOfNodes.shift();`
+      }
+      return data;
     }
-    return data;
+    catch (error) {
+      console.log(error.message);
+    }
   }
-
 }
 
 module.exports = BinaryTree;
