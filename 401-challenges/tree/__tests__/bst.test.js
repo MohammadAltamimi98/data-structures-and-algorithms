@@ -19,14 +19,7 @@ describe('Binary Search Tree', () => {
     expect(tree.preOrder()).toEqual([5, 2, 17, 9, 30]);
   });
 
-  // it('throws an error if there was a duplicate', () => {
-  //   tree.add(2);
-  //   tree.add(9);
-  //   expect(() => {
-  //     tree.add(9);
-  //   }).toThrow('Duplicate is not allowed.')
-  // });
-
+ 
   test('should return true if value is in the tree', () => {
     expect(tree.contains(17)).toBeTruthy();
 
