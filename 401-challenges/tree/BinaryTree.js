@@ -85,7 +85,9 @@ class BinaryTree {
 
       // use a while loop to traverse 
       while (arrayOfNodes.length) {
-        current = arrayOfNodes.shift(); // define the current to equal the first item in the array and remove it from the array (zeroth index); 
+        current = arrayOfNodes.splice(0, 1)[0]; // define the current to equal the first item in the array and remove it from the array (zeroth index);
+        // splice(0,1) will remove the index and return a new array [0] is the first index of that array
+
         data.push(current.value); //push the value to the data array
         if (current.left) {
           arrayOfNodes.push(current.left);
