@@ -15,17 +15,17 @@ describe('Binary Search Tree', () => {
     tree.add(2);
     console.log(tree);
     tree.add(9);
-    console.log(tree);
+    // console.log(tree);
     expect(tree.preOrder()).toEqual([5, 2, 17, 9, 30]);
   });
 
- 
+
   test('should return true if value is in the tree', () => {
     expect(tree.contains(17)).toBeTruthy();
 
   })
   test('should return false if value is not in the tree', () => {
-    console.log(tree);
+    // console.log(tree);
     expect(tree.contains(1700)).toBeFalsy();
 
   })

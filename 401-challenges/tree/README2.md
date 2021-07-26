@@ -18,9 +18,7 @@
 
 
 ## Whiteboard:
-
-
-
+![](./breadthfirst.png)
 
 
 

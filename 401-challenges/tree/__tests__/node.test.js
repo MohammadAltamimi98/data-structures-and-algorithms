@@ -27,19 +27,19 @@ describe('Binary Tree check', () => {
 
   test('should test preorder', () => {
     let expectedOrder = [1, 2, 4, 5, 7, 3, 6];
-    console.log(tree);
+    // console.log(tree);
     expect(tree.preOrder()).toEqual(expectedOrder)
   })
 
   test('should test inorder', () => {
     let expectedOrder = [4, 2, 5, 7, 1, 6, 3];
-    console.log(tree);
+    // console.log(tree);
     expect(tree.inOrder()).toEqual(expectedOrder)
   })
 
   test('should test postOrder', () => {
     let expectedOrder = [4, 7, 5, 2, 6, 3, 1];
-    console.log(tree);
+    // console.log(tree);
     expect(tree.postOrder()).toEqual(expectedOrder)
   })
 

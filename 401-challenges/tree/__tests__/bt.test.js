@@ -58,10 +58,10 @@ describe('breadth first search', () => {
     const one = new Node(1);
     const two = new Node(2);
     const three = new Node(3);
-    const four = new Node(4);
+    const four = new Node(24);
     const five = new Node(5);
     const six = new Node(60);
-    const seven = new Node(7);
+    const seven = new Node(77);
 
     one.left = two;
     one.right = three;
@@ -79,10 +79,10 @@ describe('breadth first search', () => {
       1,
       2,
       3,
-      4,
+      24,
       5,
       60,
-      7
+      77
     ]);
   })
 
