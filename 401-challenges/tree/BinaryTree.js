@@ -1,3 +1,5 @@
+const Node = require('./Node');
+
 class BinaryTree {
   constructor(root) {
     this.root = root;
@@ -70,7 +72,7 @@ class BinaryTree {
   breadthFirstFunction() {
     try {
       let current = this.root; // initiate current to be your pointer
-      if (!current) throw new Error('There is no root');
+      // if (!current) throw new Error('There is no root');
       let data = []; // initaiate an empty array to hold the values of nodes
       let arrayOfNodes = [];// initiate an empty array to hold all nodes 
 
@@ -102,7 +104,62 @@ class BinaryTree {
       console.log(error.message);
     }
   }
+
+  fizzBuzzTree(tree) {
+    try {
+      let array = []; // define an array to push values to.
+      let newTree = tree; // initiate tree
+      let rootPointer = newTree.root; // use the root as a pointer
+      array.push(rootPointer);// push the root to be the first value
+      while (array.length) {
+        rootPointer = array.pop();// used the arrays method (pop) to remove the last index and return its value
+        console.log('rootPointer', rootPointer);
+        console.log('rootPointer.value', rootPointer.value);
+
+        switch (rootPointer) { // create your switch cases
+          case (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer):
+            rootPointer.value = 'FizzBuzz';
+            break;
+          case (rootPointer.value % 5 === 0 && rootPointer):
+            rootPointer.value = 'Buzz';
+            break;
+          case (rootPointer.value % 3 === 0 && rootPointer):
+            rootPointer.value = 'Fizz';
+            break;
+          case (rootPointer.value % 3 !== 0 && rootPointer.value % 5 !== 0 && rootPointer):
+            rootPointer.value = `${rootPointer.value}`;
+            break;
+        }
+
+        if (rootPointer.left) array.push(rootPointer.left);
+        if (rootPointer.right) array.push(rootPointer.right);
+      }
+      console.log("returns a tree ", tree);
+      return tree;
+    }
+    catch (error) {
+      console.log(error.message);
+    }
+  }
+
+
 }
+
+//testing ...
+// const tree = new BinaryTree();
+// tree.root = new Node(5);
+
+// tree.root.left = new Node(17);
+// tree.root.left.left = new Node(12);
+// tree.root.left.right = new Node(16);
+// tree.root.left.right.left = new Node(15);
+// tree.root.left.right.right = new Node(121);
+// tree.root.right = new Node(15);
+// let fizzBuzz = tree.fizzBuzzTree(tree);
+
+// console.log('tree', tree);
+// console.log('tree.root', tree.root);
+// console.log('fizzBuzz', fizzBuzz);
 
 module.exports = BinaryTree;
 

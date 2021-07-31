@@ -1,4 +1,5 @@
-'use strict'; const Node = require('../Node');
+'use strict';
+const Node = require('../Node');
 const BinaryTree = require('../BinaryTree');
 
 
@@ -91,8 +92,39 @@ describe('breadth first search', () => {
     expect(tree.breadthFirstFunction()).toBeFalsy();
   })
 
+
 })
 
+
+describe('fizzbuzz', () => {
+
+  it('fizzBuzz method', () => {
+    const tree = new BinaryTree();
+    tree.root = new Node(3);
+    tree.root.left = new Node(5);
+    tree.root.right = new Node(15);
+    tree.root.left.left = new Node(8);
+    tree.root.left.right = new Node(6);
+    tree.root.left.right.left = new Node(7);
+    tree.root.right.right = new Node(20);
+    tree.root.right.right.left = new Node(14);
+    tree.root.left.right.right = new Node(16);
+    // console.log('tree', tree);
+    let fizzBuzzModel = tree.fizzBuzzTree(tree);
+    // console.log('tree.root', tree.root);
+    // console.log('fizzBuzz', fizzBuzzModel);
+    let resultsArray = fizzBuzzModel.breadthFirstFunction()
+    expect(resultsArray).toEqual(["Fizz",
+      "Buzz",
+      "FizzBuzz",
+      "8",
+      "Fizz",
+      "Buzz",
+      "7",
+      "16",
+      "14",]);
+  });
+})
 
 
 
