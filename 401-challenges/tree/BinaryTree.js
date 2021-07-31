@@ -116,8 +116,7 @@ class BinaryTree {
         console.log('rootPointer', rootPointer);
         console.log('rootPointer.value', rootPointer.value);
 
-
-        switch (rootPointer) {
+        switch (rootPointer) { // create your switch cases
           case (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer):
             rootPointer.value = 'FizzBuzz';
             break;
@@ -131,23 +130,11 @@ class BinaryTree {
             rootPointer.value = `${rootPointer.value}`;
             break;
         }
-        // if (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer) { // applying the conditions 
-        //   rootPointer.value = 'FizzBuzz';
-        // }
-        // if (rootPointer.value % 5 === 0 && rootPointer) {
-        //   rootPointer.value = 'Buzz';
-        // }
-        // if (rootPointer.value % 3 === 0 && rootPointer) {
-        //   rootPointer.value = 'Fizz';
-        // }
 
-        // else if (rootPointer.value % 3 !== 0 && rootPointer.value % 5 !== 0 && rootPointer) {
-        //   rootPointer.value = `${rootPointer.value}`;
-        // }
         if (rootPointer.left) array.push(rootPointer.left);
         if (rootPointer.right) array.push(rootPointer.right);
-      } array
-      // console.log(tree);
+      }
+      console.log("returns a tree ", tree);
       return tree;
     }
     catch (error) {
