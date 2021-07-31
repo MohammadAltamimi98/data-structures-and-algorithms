@@ -111,24 +111,39 @@ class BinaryTree {
       let newTree = tree; // initiate tree
       let rootPointer = newTree.root; // use the root as a pointer
       array.push(rootPointer);// push the root to be the first value
-
       while (array.length) {
-        rootPointer = array.pop();
+        rootPointer = array.pop();// used the arrays method (pop) to remove the last index and return its value
         console.log('rootPointer', rootPointer);
         console.log('rootPointer.value', rootPointer.value);
 
-        if (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer) {
-          rootPointer.value = 'FizzBuzz';
+
+        switch (rootPointer) {
+          case (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer):
+            rootPointer.value = 'FizzBuzz';
+            break;
+          case (rootPointer.value % 5 === 0 && rootPointer):
+            rootPointer.value = 'Buzz';
+            break;
+          case (rootPointer.value % 3 === 0 && rootPointer):
+            rootPointer.value = 'Fizz';
+            break;
+          case (rootPointer.value % 3 !== 0 && rootPointer.value % 5 !== 0 && rootPointer):
+            rootPointer.value = `${rootPointer.value}`;
+            break;
         }
-        if (rootPointer.value % 3 === 0 && rootPointer) {
-          rootPointer.value = 'Fizz';
-        }
-        if (rootPointer.value % 5 === 0 && rootPointer) {
-          rootPointer.value = 'Buzz';
-        }
-        else if (rootPointer.value % 3 !== 0 && rootPointer.value % 5 !== 0 && rootPointer) {
-          rootPointer.value = `${rootPointer.value}`;
-        }
+        // if (rootPointer.value % 3 === 0 && rootPointer.value % 5 === 0 && rootPointer) { // applying the conditions 
+        //   rootPointer.value = 'FizzBuzz';
+        // }
+        // if (rootPointer.value % 5 === 0 && rootPointer) {
+        //   rootPointer.value = 'Buzz';
+        // }
+        // if (rootPointer.value % 3 === 0 && rootPointer) {
+        //   rootPointer.value = 'Fizz';
+        // }
+
+        // else if (rootPointer.value % 3 !== 0 && rootPointer.value % 5 !== 0 && rootPointer) {
+        //   rootPointer.value = `${rootPointer.value}`;
+        // }
         if (rootPointer.left) array.push(rootPointer.left);
         if (rootPointer.right) array.push(rootPointer.right);
       } array
