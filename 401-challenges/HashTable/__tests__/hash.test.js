@@ -27,5 +27,16 @@ describe('Hash - map', () => {
   })
 
 
+  test('should get the key from storage', () => {
+    const hashmap = new Hashmap(2000);
+    hashmap.add('mean', 'test');
+    hashmap.add('zia', 'test1');
+
+    expect(hashmap.get('mean')).toEqual('test');
+
+  })
+ 
+
+
 })
 
