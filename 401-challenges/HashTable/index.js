@@ -58,26 +58,33 @@ class Hashmap {
 
 
   get(key) {
-    const hash = this.hash(key);
-    // console.log('Key', hash);
-    if (!this.storage[hash]) {
-      return 'value does not exist!'
-    }
-    else {
-      if (this.storage[hash].length !== 0) {
-        let node = this.storage[hash].head; // for traversing - define your node 
-        while (node) {
-          if (Object.keys(node.value)[0] === key) {
-            let value = Object.values(node.value)[0];
-            return value;
-          }
-          node = node.next;
+try {
+  const hash = this.hash(key);
+  // console.log('Key', hash);
+  if (!this.storage[hash]) {
+    return 'value does not exist!'
+  }
+  else {
+    if (this.storage[hash].length !== 0) {
+      let node = this.storage[hash].head; // for traversing - define your node 
+      while (node) {
+        if (Object.keys(node.value)[0] === key) {
+          let value = Object.values(node.value)[0];
+          return value;
         }
-      } else {
-        // console.log(Object.values(this.storage[hash].head.value)[0]);
-        return Object.values(this.storage[hash].head.value)[0];
+        node = node.next;
       }
+    } else {
+      // console.log(Object.values(this.storage[hash].head.value)[0]);
+      return Object.values(this.storage[hash].head.value)[0];
     }
+  }
+} catch (error) {
+  console.log(error.message);
+}
+
+
+  
   }
 
 
