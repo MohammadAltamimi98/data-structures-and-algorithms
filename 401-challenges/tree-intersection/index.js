@@ -6,15 +6,14 @@ class Node {
   }
 }
 
+
 class BinaryTree {
   constructor(root) {
     this.root = root;
   }
-
   treeIntersection(root1, root2) {
     if (!root1 || !root2) throw new Error('there is no root to comapare');
     let array = [];
-
     const _traverse = (node1, node2) => {
       if (node1 && node2) {
         if (node1.value === node2.value) {
