@@ -37,33 +37,54 @@ class Graph {
     }
   }
 
-  getNode() {
-    let collection = [];
-    for (const [vertex, edge] of this._adjacencyList.entries()) {
-      if (edge.length) {
-        if (edge.length > 1) {
-          edge.forEach((e) => collection.push(`${vertex.value} with ${e.vertex.value}`));
-        }
-        else {
-          collection.push(`${vertex.value} with ${edge[0].vertex.value}`);
+
+  getNeighbours() {
+    try {
+      let collectionOfEdges = [];
+      for (const [vertex, edge] of this._adjacencyList.entries()) {
+        if (edge.length > 0) {
+          if (edge.length > 1) {
+            edge.forEach((e, i) => collectionOfEdges.push(`${vertex.value} with ${e.vertex.value}`));
+          }
+          else {
+            collectionOfEdges.push(`${vertex.value} with ${edge[0].vertex.value}`);
+          }
         }
       }
+      return collectionOfEdges;
+    } catch (error) {
+      console.log(error.message);
     }
+
   }
 
 
-  getNeighbour() {
-let colelction=[];
+  getNodes() {
+    try {
+      let collectionOfNodes = [];
+      for (const [vertex, edge] of this._adjacencyList.entries()) {
+        collectionOfNodes.push(vertex)
+      };
+      return collectionOfNodes;
+    } catch (error) {
+      console.log(error.message);
+    }
 
   }
 
   defineSize() {
-    let size = 0;
-    for (const vertex of this._adjacencyList.keys()) {
-      size++;
+    try {
+      let size = 0;
+      for (const vertex of this._adjacencyList.keys()) {
+        size++;
+      }
+      return size;
+    } catch (error) {
+      console.log(error.message);
     }
-    return size;
   }
 
-
 }
+
+
+module.exports = { Vertex, Graph, Edge }
