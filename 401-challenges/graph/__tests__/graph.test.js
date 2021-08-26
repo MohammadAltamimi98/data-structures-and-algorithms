@@ -23,7 +23,7 @@ describe('Graph', () => {
     graph.addVertex(three);
     graph.addDirectedEdge(two, three);
 
-    expect(graph.getNeighbours()).toEqual(['2 with 3']);
+    expect(graph.getNeighbours()).toEqual(['2 is linked to 3']);
   });
 
   test('should give me the size of the graph', () => {

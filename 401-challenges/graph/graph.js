@@ -44,10 +44,10 @@ class Graph {
       for (const [vertex, edge] of this._adjacencyList.entries()) {
         if (edge.length > 0) {
           if (edge.length > 1) {
-            edge.forEach((e, i) => collectionOfEdges.push(`${vertex.value} with ${e.vertex.value}`));
+            edge.forEach((e, i) => collectionOfEdges.push(`${vertex.value} is linked to ${e.vertex.value}`));
           }
           else {
-            collectionOfEdges.push(`${vertex.value} with ${edge[0].vertex.value}`);
+            collectionOfEdges.push(`${vertex.value} is linked to ${edge[0].vertex.value}`);
           }
         }
       }
