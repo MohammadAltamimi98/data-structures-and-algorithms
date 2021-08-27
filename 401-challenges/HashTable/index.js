@@ -27,7 +27,7 @@ class LinkedList {
 
 class Hashmap {
   constructor(size) {
-    this.size = size;  
+    this.size = size;
     this.storage = new Array(size)
   }
 
@@ -37,7 +37,7 @@ class Hashmap {
       return hashed;
     }, 0);
     const hashKey = (sumCharCode * 19) % this.size;
-    return hashKey; 
+    return hashKey;
   }
 
   add(key, value) {
@@ -59,7 +59,7 @@ class Hashmap {
       }
       else {
         if (this.storage[hash].length !== 0) {
-          let node = this.storage[hash].head; 
+          let node = this.storage[hash].head;
           while (node) {
             if (Object.keys(node.value)[0] === key) {
               let value = Object.values(node.value)[0];
@@ -84,7 +84,33 @@ class Hashmap {
     else { return false; }
   }
 
+  leftJoin(left, right) {
+    try {
+      const result = [];
+      for (let i in left.storage) {
+        result.push(Object.entries(left.storage[i].head.value)[0]);
+      }
+      for (let i = 0; i < result.length; i++) {
+        if (right.get(result[i][0])) {
+          result[i].push(right.get(result[i][0]));
+        } else {
+          result[i].push('null');
+        }
+      }
+      return result;
+    } catch (error) {
+      console.log(error.message);
+    }
+
+  }
+
+
 }
+
+
+
+
+
 
 
 

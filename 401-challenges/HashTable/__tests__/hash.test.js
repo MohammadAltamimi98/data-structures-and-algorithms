@@ -35,7 +35,45 @@ describe('Hash - map', () => {
     expect(hashmap.get('mean')).toEqual('test');
 
   })
- 
+
+
+  it('should return an array of the jonied values', () => {
+    const Left = new Hashmap(2000);
+    let Right = new Hashmap(2000);
+    Left.add('fond', 'enamour');
+    Left.add('wrath', 'anger');
+    Left.add('diligent', 'employed');
+    Left.add('outfit', 'garb');
+    Left.add('guide', 'usher');
+
+    console.log(Left);
+    Right.add('fond', 'averse');
+    Right.add('wrath', 'delight');
+    Right.add('diligent', 'idle');
+    Right.add('guide', 'follow');
+    Right.add('flow', 'jam');
+
+    let results = Left.leftJoin(Left, Right);
+    expect(results).toStrictEqual([
+      [
+        "fond",
+        "enamour",
+        "averse",
+      ],
+      [
+        "diligent",
+        "employed",
+        "idle",
+      ],
+      ['wrath', 'anger', 'delight'],
+      [
+        "outfit",
+        "garb",
+        "value does not exist!",
+      ],
+      ['guide', 'usher', 'follow']
+    ]);
+  });
 
 
 })
