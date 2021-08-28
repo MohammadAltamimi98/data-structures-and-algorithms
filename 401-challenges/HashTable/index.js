@@ -84,24 +84,34 @@ class Hashmap {
     else { return false; }
   }
 
-  leftJoin(left, right) {
+  leftJoin(leftTable, rightTable) {
     try {
-      const result = [];
-      for (let i in left.storage) {
-        result.push(Object.entries(left.storage[i].head.value)[0]);
+      if (!leftTable && rightTable) throw new Error('left table does not exist');
+      if (leftTable && !rightTable) throw new Error('right table does not exist');
+      const values = [];
+      for (let i in leftTable.storage) {
+        // console.log(leftTable.storage);
+        // console.log(leftTable.storage[i].head);
+        // console.log(Object.entries(leftTable.storage[i].head)[0]);
+        let temp = Object.entries(leftTable.storage[i].head.value)[0];
+        values.push(temp);
       }
-      for (let i = 0; i < result.length; i++) {
-        if (right.get(result[i][0])) {
-          result[i].push(right.get(result[i][0]));
-        } else {
-          result[i].push('null');
+      for (let i = 0; i < values.length; i++) {
+        if (rightTable.get(values[i][0]) !== null) {
+          let temp = rightTable.get(values[i][0]);
+          values[i].push(temp);
+        }
+        else if (rightTable.get(values[i][0]) === null) {
+          values[i].push('not found');
+        }
+        else {
+          throw new Error('something is not working!')
         }
       }
-      return result;
+      return values;
     } catch (error) {
       console.log(error.message);
     }
-
   }
 
 
