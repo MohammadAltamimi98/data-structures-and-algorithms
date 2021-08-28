@@ -40,38 +40,35 @@ describe('Hash - map', () => {
   it('should return an array of the jonied values', () => {
     const Left = new Hashmap(2000);
     let Right = new Hashmap(2000);
-    Left.add('fond', 'enamour');
-    Left.add('wrath', 'anger');
-    Left.add('diligent', 'employed');
-    Left.add('outfit', 'garb');
-    Left.add('guide', 'usher');
+    Left.add('mohammad', 'good');
+    Left.add('saeed', 'talks');
+    Left.add('meh', 'nothing');
+
 
     console.log(Left);
-    Right.add('fond', 'averse');
-    Right.add('wrath', 'delight');
-    Right.add('diligent', 'idle');
-    Right.add('guide', 'follow');
-    Right.add('flow', 'jam');
+    Right.add('mohammad', 'man');
+    Right.add('saeed', 'much');
+    Right.add('take', 'idk');
 
     let results = Left.leftJoin(Left, Right);
     expect(results).toStrictEqual([
       [
-        "fond",
-        "enamour",
-        "averse",
+        "saeed",
+        "talks",
+        "much",
       ],
       [
-        "diligent",
-        "employed",
-        "idle",
+        "mohammad",
+        "good",
+        "man",
       ],
-      ['wrath', 'anger', 'delight'],
+
+
       [
-        "outfit",
-        "garb",
+        "meh",
+        "nothing",
         "value does not exist!",
-      ],
-      ['guide', 'usher', 'follow']
+      ]
     ]);
   });
 
