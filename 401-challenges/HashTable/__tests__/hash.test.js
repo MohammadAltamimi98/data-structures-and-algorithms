@@ -35,7 +35,42 @@ describe('Hash - map', () => {
     expect(hashmap.get('mean')).toEqual('test');
 
   })
- 
+
+
+  it('should return an array of the jonied values', () => {
+    const Left = new Hashmap(2000);
+    let Right = new Hashmap(2000);
+    Left.add('mohammad', 'good');
+    Left.add('saeed', 'talks');
+    Left.add('meh', 'nothing');
+
+
+    console.log(Left);
+    Right.add('mohammad', 'man');
+    Right.add('saeed', 'much');
+    Right.add('take', 'idk');
+
+    let results = Left.leftJoin(Left, Right);
+    expect(results).toStrictEqual([
+      [
+        "saeed",
+        "talks",
+        "much",
+      ],
+      [
+        "mohammad",
+        "good",
+        "man",
+      ],
+
+
+      [
+        "meh",
+        "nothing",
+        "value does not exist!",
+      ]
+    ]);
+  });
 
 
 })

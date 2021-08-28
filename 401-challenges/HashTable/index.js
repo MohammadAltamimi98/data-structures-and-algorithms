@@ -27,7 +27,7 @@ class LinkedList {
 
 class Hashmap {
   constructor(size) {
-    this.size = size;  
+    this.size = size;
     this.storage = new Array(size)
   }
 
@@ -37,7 +37,7 @@ class Hashmap {
       return hashed;
     }, 0);
     const hashKey = (sumCharCode * 19) % this.size;
-    return hashKey; 
+    return hashKey;
   }
 
   add(key, value) {
@@ -59,7 +59,7 @@ class Hashmap {
       }
       else {
         if (this.storage[hash].length !== 0) {
-          let node = this.storage[hash].head; 
+          let node = this.storage[hash].head;
           while (node) {
             if (Object.keys(node.value)[0] === key) {
               let value = Object.values(node.value)[0];
@@ -84,7 +84,43 @@ class Hashmap {
     else { return false; }
   }
 
+  leftJoin(leftTable, rightTable) {
+    try {
+      if (!leftTable && rightTable) throw new Error('left table does not exist');
+      if (leftTable && !rightTable) throw new Error('right table does not exist');
+      const values = [];
+      for (let i in leftTable.storage) {
+        // console.log(leftTable.storage);
+        // console.log(leftTable.storage[i].head);
+        // console.log(Object.entries(leftTable.storage[i].head)[0]);
+        let temp = Object.entries(leftTable.storage[i].head.value)[0];
+        values.push(temp);
+      }
+      for (let i = 0; i < values.length; i++) {
+        if (rightTable.get(values[i][0]) !== null) {
+          let temp = rightTable.get(values[i][0]);
+          values[i].push(temp);
+        }
+        else if (rightTable.get(values[i][0]) === null) {
+          values[i].push('not found');
+        }
+        else {
+          throw new Error('something is not working!')
+        }
+      }
+      return values;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+
 }
+
+
+
+
+
 
 
 
